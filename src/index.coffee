@@ -15,8 +15,6 @@ app.post '/', (req, resp) ->
   row_sep = '\r' if req.fields['row-sep'] == '<cr>'
   row_sep = '\n' if req.fields['row-sep'] == '<lf>'
   
-  console.log req.fields['row-sep']
-  console.log req.fields['col-sep']
   json = []
   csvjs.parse req.files[0].content, 
     col_sep: req.fields['col-sep']
