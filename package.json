@@ -1,0 +1,21 @@
+{
+  "author": "Tom Wilson <tom@jackhq.com>",
+  "name": "csv2json",
+  "description": "A web app to convert a csv file to a json file",
+  "version": "0.0.0",
+  "homepage": "http://csv2json.herokuapp.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:twilson63/csv2json.git"
+  },
+  "engines": {
+    "node": "~> 0.4.12"
+  },
+  "dependencies": {
+    "express": "*",
+    "csvjs": "*"
+  },
+  "devDependencies": {
+    "coffee-script": ">= 0.0.0"
+  }
+}
