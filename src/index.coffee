@@ -10,15 +10,10 @@ app = express.createServer(
 
 app.post '/', (req, resp) -> 
   # refactor...
-  row_sep = req.fields['row-sep']
-  row_sep = '\r\n' if req.fields['row-sep'] == '<cr><lf>'
-  row_sep = '\r' if req.fields['row-sep'] == '<cr>'
-  row_sep = '\n' if req.fields['row-sep'] == '<lf>'
-  
   json = []
-  csvjs.parse req.files[0].content, 
-    col_sep: req.fields['col-sep']
-    row_sep: row_sep
+  csvjs.parse req.files[0].content,
+    col_sep: req.fields['col-sep'].trim()
+    row_sep: '\n'
     (err, row) -> json.push row
     
   resp.writeHead 200, 
