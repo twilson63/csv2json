@@ -27,4 +27,4 @@ app.post '/', (req, resp) ->
 
   resp.end JSON.stringify(json)
 
-app.listen Number(process.PORT) || 8000
+app.listen process.env.PORT || 8000
