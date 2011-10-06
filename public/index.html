@@ -1,29 +1,73 @@
-<html>
-  <head>
-    <title>csv2json</title>
-  </head>
-  <body>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>csv2json</title>
+  <meta name="description" content="Convert CSV docs to JSON">
+  <meta name="author" content="Tom Wilson">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="stylesheets/base.css">
+  <link rel="stylesheet" href="stylesheets/skeleton.css">
+  <link rel="stylesheet" href="stylesheets/layout.css">
+
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+  <div class="container">
+    <div class="sixteen columns">
     <h1>csv2json</h1>
     <p>Upload a csv file and get a json formatted file.</p>
     <form action='/' method='post' enctype='multipart/form-data'>
       <p>
-        <label>Column Separator</label>
-        <input type='text' name="col-sep" value=',' />
-      </p>
-      <p>
-        <label>Row Separator</label>
-        <input type='text' name="row-sep" value='\r\n' />
-      </p>
-     <p>
         <label>File</label>
         <input type='file' name="csv" />
       </p>
       <p>
         <button>Upload</button>
       </p>
+
+      <h4>Optional</h4>
+      <p>
+        <label>Column Separator</label>
+        <input type='text' name="col-sep" value=',' />
+      </p>
+      <p>
+        <label>Row Separator</label>
+        <input type='text' name="row-sep" value='<cr><lf>' />
+      </p>
     </form>
-    <div>
-      <p>Footer</p>
     </div>
-  </body>
+    <div class="sixteen columns">
+      <center><a href='https://github.com/twilson63/csv2json'>Source on Github</a></center>
+    </div>
+  </div>
+<!-- JS
+  ================================================== -->
+  <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script src="javascripts/tabs.js"></script>
+
+<!-- End Document
+================================================== -->
+</body>
 </html>

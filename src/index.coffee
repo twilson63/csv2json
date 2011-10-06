@@ -9,9 +9,19 @@ app = express.createServer(
 )
 
 app.post '/', (req, resp) -> 
+  # refactor...
+  row_sep = req.fields['row-sep']
+  row_sep = '\r\n' if req.fields['row-sep'] == '<cr><lf>'
+  row_sep = '\r' if req.fields['row-sep'] == '<cr>'
+  row_sep = '\n' if req.fields['row-sep'] == '<lf>'
+  
+  console.log req.fields['row-sep']
+  console.log req.fields['col-sep']
   json = []
-  csvjs.parse req.files[0].content, (err, row) -> 
-    json.push row
+  csvjs.parse req.files[0].content, 
+    col_sep: req.fields['col-sep']
+    row_sep: row_sep
+    (err, row) -> json.push row
     
   resp.writeHead 200, 
     'Content-Type': 'text/json' 
